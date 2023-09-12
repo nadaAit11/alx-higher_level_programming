@@ -2,4 +2,10 @@
 
 
 def class_to_json(obj):
-    return vars(obj)
+    """ function that returns the dictionary
+    description
+    """
+    dic = {}
+    if hasattr(obj, "__dict__"):
+        dic = obj.__dict__.copy()
+    return dic
