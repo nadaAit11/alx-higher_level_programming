@@ -1,5 +1,5 @@
 #!/usr/bin/node
-//declaring the constant
+// declaring the constant
 const myVar = 'JavaScript is amazing';
-//print the output
+// print the output
 console.log(myVar);
