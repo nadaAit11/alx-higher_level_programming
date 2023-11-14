@@ -5,7 +5,7 @@ class Rectangle {
       this.width = w;
       this.height = h;
     } else {
-      // If w or h is not a positive integer, create an empty object
+      // create an empty object
       Object.create(null);
     }
   }
@@ -16,10 +16,14 @@ class Rectangle {
       console.log('X'.repeat(this.width));
     }
   }
+
   rotate () {
+    // Exchange the width and height of the rectangle
     [this.width, this.height] = [this.height, this.width];
   }
+
   double () {
+    // Multiply the width and height of the rectangle by 2
     this.width *= 2;
     this.height *= 2;
   }
