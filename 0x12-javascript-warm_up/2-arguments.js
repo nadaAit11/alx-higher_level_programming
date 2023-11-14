@@ -4,9 +4,10 @@
 const argv = process.argv.length - 2;
 
 // print a message according to the number of arguments
-if (argv === 0)
+if (argv === 0) {
 	console.log('No argument');
-else if (argv === 1)
+} else if (argv === 1) {
 	console.log('Argument found');
-else
+} else {
 	console.log('Arguments found');
+}
