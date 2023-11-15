@@ -1,5 +1,5 @@
 #!/usr/bin/node
-sh: 1: q: not found
+let c = 0;
 exports.logMe = function (item) {
   console.log(c + ': ' + item);
   c++;
