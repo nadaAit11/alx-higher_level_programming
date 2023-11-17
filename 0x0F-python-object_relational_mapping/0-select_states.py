@@ -12,8 +12,7 @@ def list_states(username, password, database):
         passwd=password, db=database
     )
 
-
-    # Create a cursor object to execute SQL queries
+    # Prepare a cursor object using cursor() method
     cursor = db.cursor()
 
     # Execute SQL query
@@ -21,16 +20,16 @@ def list_states(username, password, database):
     cursor.execute(query)
 
     # Fetch all rows and display results
-    states= cursor.fetchall()
-    for state in states:
-        print(state)
+    results = cursor.fetchall()
+    for row in results:
+        print(row)
 
     # Disconnect from server
     db.close()
 
 
 if __name__ == "__main__":
-    # Check if the number of arguments is correct
+    # Retrieve arguments from command line
     if len(sys.argv) != 4:
         print("Usage: {} <username> <password> <database>".format(sys.argv[0]))
         sys.exit(1)
