@@ -15,8 +15,9 @@ def list_states(username, password, database):
     cursor = db.cursor()
 
     # Execute SQL query
-    cursor.execute("SELECT * FROM states ORDER BY id ASC")
-    # Fetch all rows and display results
+    query = "SELECT * FROM states ORDER BY id ASC"
+    cursor.execute(query)
+    y Fetch all rows and display results
     states = cursor.fetchall()
     for state in states:
         print(state)
