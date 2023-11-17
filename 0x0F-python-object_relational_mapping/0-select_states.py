@@ -11,25 +11,22 @@ def list_states(username, password, database):
     cursor = db.cursor()
 
     # Execute the query to retrieve the list of states
-    cursor.execute("SELECT * FROM states ORDER BY id")
+    cursor.execute("SELECT * FROM states ORDER BY id ASC")
 
     # Fetch all the rows and display the results
     states = cursor.fetchall()
-    for state in states:
-        print(state)
+    for s in states:
+        print(s)
 
     # Close the cursor and the database connection
     cursor.close()
     db.close()
 
 if __name__ == "__main__":
-    # Check if the correct number of arguments is provided
     if len(sys.argv) != 4:
-        print("Usage: python script.py <username> <password> <database>")
+        print("Usage: {} <username> <password> <database>".format(sys.argv[0]))
         sys.exit(1)
 
-    # Get MySQL username, password, and database from command line arguments
     username, password, database = sys.argv[1], sys.argv[2], sys.argv[3]
 
-    # Call the function to list states
     list_states(username, password, database)
