@@ -22,7 +22,6 @@ def list_states(username, password, database):
         print(state)
 
     # Disconnect from server
-    cursor.close()
     db.close()
 
 
