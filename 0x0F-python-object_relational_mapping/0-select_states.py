@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-"""Lists all states from the database hbtn_0e_0_usa"""
 
 import MySQLdb
 import sys
@@ -16,15 +15,14 @@ def list_states(username, password, database):
     cursor = db.cursor()
 
     # Execute SQL query
-    query = "SELECT * FROM states ORDER BY id ASC"
-    cursor.execute(query)
-
+    cursor.execute("SELECT * FROM states ORDER BY id ASC")
     # Fetch all rows and display results
-    results = cursor.fetchall()
-    for row in results:
-        print(row)
+    states = cursor.fetchall()
+    for state in states:
+        print(state)
 
     # Disconnect from server
+    cursor.close()
     db.close()
 
 
@@ -34,8 +32,6 @@ if __name__ == "__main__":
         print("Usage: {} <username> <password> <database>".format(sys.argv[0]))
         sys.exit(1)
 
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
+    username, password, database = sys.argv[1], sys.argv[2], sys.argv[3]
 
     list_states(username, password, database)
