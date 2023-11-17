@@ -21,9 +21,9 @@ def list_states(username, password, database):
     cursor.execute(query)
 
     # Fetch all rows and display results
-    results = cursor.fetchall()
-    for row in results:
-        print(row)
+    states= cursor.fetchall()
+    for state in states:
+        print(state)
 
     # Disconnect from server
     db.close()
