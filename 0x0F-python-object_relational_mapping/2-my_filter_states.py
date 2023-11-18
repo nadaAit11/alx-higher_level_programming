@@ -7,9 +7,12 @@ where name matches matches an argument passed as a parameter
 import MySQLdb
 from sys import argv
 
+# the code should be excecuted when imported
 if __name__ == '__main__':
+    # connect to the db
     db = MySQLdb.connect(host="localhost", port=3306,
                          user=argv[1], passwd=argv[2], db=argv[3])
+    # create a cursor
     cursor = db.cursor()
     cursor.execute("SELECT * FROM states WHERE name LIKE BINARY '{}'".format(argv[4]))
     for data in cursor.fetchall():
